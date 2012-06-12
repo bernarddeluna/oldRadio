@@ -4,15 +4,15 @@ var express = require('express'),
     routes = require('./routes');
 
 // Twitter
-// var twitter = require('ntwitter');
-// var credentials = require('./credentials.js');
+var twitter = require('ntwitter'),
+    credentials = require('./credentials.js');
 
-// var t = new twitter({
-//   consumer_key: credentials.consumer_key,
-//   consumer_secret: credentials.consumer_secret,
-//   access_token_key: credentials.access_token_key,
-//   access_token_secret: credentials.access_token_secret
-// });
+var t = new twitter({
+  consumer_key: credentials.consumer_key,
+  consumer_secret: credentials.consumer_secret,
+  access_token_key: credentials.access_token_key,
+  access_token_secret: credentials.access_token_secret
+});
 
 // Configuration
 
@@ -56,13 +56,13 @@ io.sockets.on('connection', function (socket) {
   
   io.sockets.emit('status', { status: status }); // note the use of io.sockets to emit but socket.on to listen
   
-  // t.stream('statuses/filter', { track: ['oldradio'] }, function(stream) {
+  t.stream('statuses/filter', { track: ['oldradio'] }, function(stream) {
       
-  //   stream.on('data', function(tweet) {
-  //       io.sockets.emit('status', { status: tweet.text });
-  //   });
+    stream.on('data', function(tweet) {
+        io.sockets.emit('status', { status: tweet.text });
+    });
           
-  // });
+  });
 
   socket.on('reset', function (data) {
     status = "ENVIEI UM STATUS QUALQUER";
