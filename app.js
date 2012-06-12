@@ -3,6 +3,17 @@ var express = require('express'),
     io = require('socket.io').listen(app),
     routes = require('./routes');
 
+// Twitter
+var twitter = require('ntwitter'),
+    credentials = require('./credentials.js');
+
+var t = new twitter({
+  consumer_key: credentials.consumer_key,
+  consumer_secret: credentials.consumer_secret,
+  access_token_key: credentials.access_token_key,
+  access_token_secret: credentials.access_token_secret
+});
+
 // Configuration
 
 app.configure(function() {
@@ -39,12 +50,22 @@ app.listen(port, function() {
 
 app.get('/', routes.index);
 
-var status = "All is well.";
+var status = "Canal aberto";
 
 io.sockets.on('connection', function (socket) {
+  
   io.sockets.emit('status', { status: status }); // note the use of io.sockets to emit but socket.on to listen
+  
+  t.stream('statuses/filter', { track: ['oldradio'] }, function(stream) {
+      
+    stream.on('data', function(tweet) {
+        io.sockets.emit('status', { status: tweet.text });
+    });
+          
+  });
+
   socket.on('reset', function (data) {
-    status = "Legal né?";
+    status = "ENVIEI UM STATUS QUALQUER";
     io.sockets.emit('status', { status: status });
   });
 });
