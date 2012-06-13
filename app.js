@@ -1,3 +1,5 @@
+//http://robdodson.me/blog/2012/06/04/deploying-your-first-node-dot-js-and-socket-dot-io-app-to-heroku/?utm_source=javascriptweekly&utm_medium=email
+
 var express = require('express'),
     app = express.createServer(express.logger()),
     io = require('socket.io').listen(app),
@@ -50,18 +52,18 @@ app.listen(port, function() {
 
 app.get('/', routes.index);
 
-var status = "Canal aberto";
+var status = "Carregado :)";
 
 io.sockets.on('connection', function (socket) {
   
-  io.sockets.emit('status', { status: status }); // note the use of io.sockets to emit but socket.on to listen
+  // io.sockets.emit('status', { status: status }); // note the use of io.sockets to emit but socket.on to listen
   
-  t.stream('statuses/filter', { track: ['oldradio'] }, function(stream) {
+  t.stream('statuses/filter', { track: ['felicidade'] }, function(stream) {
       
     stream.on('data', function(tweet) {
         io.sockets.emit('status', { status: tweet.text });
     });
-          
+
   });
 
   socket.on('reset', function (data) {
