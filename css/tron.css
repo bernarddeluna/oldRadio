@@ -1,0 +1,259 @@
+/*
+C U R I O U S ????
+
+try to inset the konami code and watch why we coded this CSS
+
+Konami code = up up down down right left right left b a
+*/
+
+@font-face {
+    font-family: 'TR2NRegular';
+    src: url('../font/tron-webfont.eot');
+    src: url('../font/tron-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/tron-webfont.woff') format('woff'),
+         url('../font/tron-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* RADIO */
+.tron {background: #2b2b2b;}
+
+.tron h1 {
+	color:#76e5ff;
+	font-family: "TR2NRegular";
+	text-shadow: 3px 3px 5px #5ed3ff,  -3px -3px 5px #5ed3ff, -3px 3px 5px #5ed3ff,  3px -3px 5px #5ed3ff;
+}
+.tron h1 span {
+	font-family: "Helvetica Neue", arial;
+	color:#e7e7e7;
+}
+.tron h1 a {color:#5ed3ff;}
+
+.tron .case {
+	background: #000;
+	border-color: #76e5ff;
+	border-top-color: #a9efff;
+	border-radius: 14px;
+  box-shadow: inset 0 0 6px 2px rgba(154, 245, 244, 0.6), 0 0 6px 2px rgba(154, 245, 244, 0.6);
+  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out;  
+}
+.tron .case.on {background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(43,43,43,1)), color-stop(40%,rgba(43,43,43,1)), color-stop(45%,rgba(118,229,255,1)), color-stop(55%,rgba(118,229,255,1)), color-stop(60%,rgba(43,43,43,1)), color-stop(100%,rgba(43,43,43,1)));}
+.tron .inner-case {
+	background-color: #2b2b2b;
+	border-radius: 10px;
+	border-color: #ffcc6c;
+	box-shadow: inset 0 0 6px 2px rgba(255, 118, 61, 0.6), 0 0 6px 2px rgba(255, 118, 61, 0.6);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .inner-case {
+	background-color: #2b2b2b;
+	border-radius: 10px;
+	border-color: #76e5ff;
+	box-shadow: inset 0 0 6px 2px rgba(154, 245, 244, 0.6), 0 0 6px 2px rgba(154, 245, 244, 0.6);
+}
+.tron .front-case {
+	padding: 1px;
+	background-color: #f8533f;
+	border: 3px solid rgba(0,0,0,.6);
+	border-radius: 10px;
+  background-image: -moz-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(26%,rgba(0,0,0,0.5)), color-stop(59%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.9)));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(26%,rgba(0,0,0,0.5)), color-stop(59%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.9)));
+  background-image: gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(26%,rgba(0,0,0,0.5)), color-stop(59%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.9)));
+	box-shadow: inset 0 1px 0 0px rgba(154, 245, 244, 0.2);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .front-case {background-color: #76e5ff;}
+.tron .panel {
+	background-color: #081215;
+	border-radius: 8px;
+  background-image: -webkit-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+  background-image: -moz-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+  background-image: linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+	box-shadow: inset 0 0 10px -2px rgba(154, 245, 244, 0.2);
+}
+.tron .panel:before {
+	opacity: 0;
+	content: "Tron Radio";
+	color:#76e5ff;
+	font-family: "TR2NRegular";
+	font-size:11px;
+	font-style: normal;
+	text-shadow: 1px 1px 5px rgba(154, 245, 244, 0.4),  -1px -1px 5px rgba(154, 245, 244, 0.4), -1px 1px 5px rgba(154, 245, 244, 0.4),  1px -1px 5px rgba(154, 245, 244, 0.4);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .panel:before {opacity: 1;}
+
+.tron .on-off {
+	border: 2px solid transparent;
+	height: 66px;
+	width:26px;
+	box-shadow: inset 0 0 10px -5px rgba(0,0,0,0.5), inset 0 1px 0 0 rgba(0,0,0,0.7), 0 1px 0 0 rgba(255,255,255,.3);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on-off > a {
+	left: -7px;
+	background-color: #ffcc6c;
+	box-shadow: inset 0 0 3px 2px rgba(255, 118, 61, 0.8), 0 0 7px 3px rgba(255, 118, 61, 0.4);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on-off > a > span {
+	background: #1c2629 none;
+	box-shadow: 0 0 3px 2px rgba(255, 118, 61, 0.6), inset 0 0 6px 3px rgba(255, 118, 61, 0.6);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .on-off {
+	border-color: #fff23d;
+	border-bottom-color:#ffdd00;
+	box-shadow: inset 0 0 7px 3px rgba(254, 201, 0, 0.4), 0 0 7px 3px rgba(254, 201, 0, 0.4);
+}
+.tron .on .on-off > a {
+	background-color: #fff23d;
+	box-shadow: inset 0 0 3px 2px rgba(254, 201, 0, 0.8), 0 0 7px 3px rgba(254, 201, 0, 0.4);
+}
+.tron .on .on-off > a > span {box-shadow: 0 0 3px 2px rgba(254, 201, 0, 0.6), inset 0 0 6px 3px rgba(254, 201, 0, 0.6);}
+.tron .retina {
+	overflow: visible;
+	background: transparent none;
+	border-radius: 14px;
+	box-shadow: none;
+	border: none;
+}
+.tron .live {
+	top:25px;
+	opacity: .2;
+	font-family: "TR2NRegular";
+	font-weight: bolder;
+	font-size:35px;
+	color:#000;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.7);
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .live {
+	opacity: .9;
+	color:#76e5ff;
+	text-shadow: 1px 1px 5px rgba(154, 245, 244, 0.4),  -1px -1px 5px rgba(154, 245, 244, 0.4), -1px 1px 5px rgba(154, 245, 244, 0.4),  1px -1px 5px rgba(154, 245, 244, 0.4);
+}
+.tron .stereo:before {display: none;}
+.tron .stereo {
+	color: #000;
+  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; }
+.tron .on .stereo {
+	opacity: .7;
+	color: #76e5ff;
+}
+.tron .progress {
+	opacity: .1;
+	background-image:
+  -moz-radial-gradient(rgba(255,255,255,1) 25%, transparent 16%),
+  -moz-radial-gradient(rgba(255,255,255,.3) 15%, transparent 16%);
+	background-image:
+  -webkit-radial-gradient(rgba(255,255,255,1) 25%, transparent 16%),
+  -webkit-radial-gradient(rgba(255,255,255,.3) 15%, transparent 16%);
+	background-image:
+  radial-gradient(rgba(255,255,255,1) 50%, transparent 16%),
+  radial-gradient(rgba(255,255,255,.3) 15%, transparent 16%);
+	background-size:24px 24px, 7px 7px;
+	background-position:-32px center, -36px center;
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .progress {opacity: 1;}
+
+.tron .pointer {display:none;}
+.tron .on .pointer {
+	display:block;
+	z-index: 20px;
+	top: -60px;
+	width:12px;
+	height: 140px;
+	background: #76e5ff;
+	border-radius: 0px;
+	box-shadow: 0 0 16px 6px rgba(154, 245, 244, 0.6);
+}
+.tron .pointer > span{
+	margin:0;
+	left: 3px;
+	right: 3px;
+	width: 6px;
+	height:1px;
+	background: #76e5ff;
+  box-shadow: 0 0 36px 16px rgba(154, 245, 244, 0.8), 0 0 146px 36px rgba(154, 245, 244, 0.3);
+}
+.tron .controllerCont, .tron .controller{
+	height: 40px;
+	width: 40px;
+	border: 10px solid #000;
+	background: transparent none;
+	box-shadow: none;
+	  -webkit-transition: all 0.3s ease-out;  
+     -moz-transition: all 0.3s ease-out;  
+      -ms-transition: all 0.3s ease-out;  
+       -o-transition: all 0.3s ease-out;  
+           transition: all 0.3s ease-out; 
+}
+.tron .on .controllerCont, .tron .on .controller{
+	border-color: #fff23d;
+	box-shadow: 0 0 7px 3px rgba(254, 201, 0, 0.4);
+}
+.tron .volume > .controllerCont, .tron .volume > .controller{
+	height: 30px;
+	width: 30px;
+	border-width: 5px;
+}
+.tron .on .volume > .controllerCont, .tron .on .volume > .controller{border-color: #fff23d;}
+.tron .controller > span {
+	background: transparent;
+	box-shadow: none;
+	left:8px;
+}
+.tron .on .controller > span {
+	background: #fff23d;
+	box-shadow: 0 0 7px 3px rgba(254, 201, 0, 0.8);
+	left:8px;
+}
+.tron .on .volume > .controller > span{left:12px;}
+
+/* gods */
+
+.tron .gods a {color:#5ed3ff;}

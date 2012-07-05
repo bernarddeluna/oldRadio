@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>old radio</title>
+	<link rel="stylesheet" href="css/reset.css" media="screen, all">
+	<link rel="stylesheet" href="css/style.css" media="screen, all">
+	<link rel="stylesheet" href="css/tron.css" media="screen, all">
+</head>
+<body>
+	<div class="global-radio">
+		<h1>Old Radio <span>Just CSS3 (no images) + HTML5 (audio API) + JS</span></h1>
+		<div class="case">
+			<div class="inner-case">
+				<div class="front-case">
+					<div class="panel">
+						
+						<!-- power -->
+						<div class="power">
+							<span class="on-off active">
+								<a href="#" title="on / off"><span>on / off</span></a>
+							</span>
+						</div>
+						<!-- /power -->
+
+						<!-- retina -->
+						<div class="retina">
+							<!-- live -->
+							<span class="live">Live</span>
+							<!--  progress -->
+							<div class="progress">
+								<div class="pointer"><span></span></div>
+							</div>
+							<!-- stereo -->
+							<span class="stereo">stereo</span>
+						</div>
+						<!--  / retina -->
+
+						<!-- tuner -->
+						<div class="tuner">
+							<span class="controller"><span></span></span>
+							<span class="controllerCont"></span>
+							<div></div>
+						</div>
+						<!-- /tuner -->
+
+						<!-- volume -->
+						<div class="volume">
+							<span class="controller"><span></span></span>
+							<span class="controllerCont"></span>
+							<div></div>
+							<span class="label">- +</span>
+						</div>
+						<!-- /volume -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="gods">By <a href="http://twitter.com/bernarddeluna" title="@bernarddeluna" rel="external">Bernard De Luna</a>, <a href="mailto:zanoni.miranda@uniriotec.br" title="Zanoni Miranda" rel="external">Zanoni Miranda</a> &amp; <a href="http://twitter.com/zenorocha" title="@zenorocha" rel="external">Zeno Rocha</a></p>
+	
+	<div id="audio_containner"></div>
+
+	<audio id="audio_chiado">
+        <source src="http://media.zenorocha.com/oldradio/chiado.mp3" type="audio/mpeg">
+        <source src="http://media.zenorocha.com/oldradio/chiado.ogg" type="audio/ogg">
+	</audio>
+
+	<script src="js/jquery-1.6.1.min.js"></script>
+	<script src="js/script.js"></script>
+
+	<script type="text/javascript" src="js/konami.js"></script>
+	<script type="text/javascript">
+		konami = new Konami()
+		konami.code = function() {
+			$("html").addClass("tron");
+		}
+		konami.load()
+	</script>
+	
+</body>
+</html>
