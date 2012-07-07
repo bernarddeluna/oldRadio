@@ -235,10 +235,8 @@ YUI().use('node', 'event', function (Y) {
 			  kkeys.push( e.keyCode );
 			  
 			  if ( kkeys.toString().indexOf( konami ) >= 0 ){
-			    
-			    // Y.one(document).on(unbind('keydown', arguments.callee);
+			    Y.one(document).detach('keydown', arguments.callee);
 		    	Y.one("html").addClass("tron");
-
 			  }
 
 			});
