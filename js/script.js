@@ -127,8 +127,9 @@ YUI().use('node', 'event', function (Y) {
 
 					setVolume(volumeAudio);
 
-                    Y.one(volumeRotElement).setStyle("-webkit-transform", "rotate(" + volumeAnguloAtual + "deg)");
-                    Y.one(volumeRotElement).setStyle("-moz-transform", "rotate(" + volumeAnguloAtual + "deg)");
+                    Y.one(volumeRotElement).setStyle("MozTransform", "rotate(" + volumeAnguloAtual + "deg)");
+                    Y.one(volumeRotElement).setStyle("webkitTransform", "rotate(" + volumeAnguloAtual + "deg)");
+                    Y.one(volumeRotElement).setStyle("transform", "rotate(" + volumeAnguloAtual + "deg)");
 				}
 
 			});
@@ -180,8 +181,9 @@ YUI().use('node', 'event', function (Y) {
 
 					pointer.setStyle("left", pointerPosInicial);
 
-					Y.one(tunerRotElement).setStyle("-webkit-transform", "rotate(" + anguloAtual + "deg)");
-					Y.one(tunerRotElement).setStyle("-moz-transform", "rotate(" + anguloAtual + "deg)");
+					Y.one(tunerRotElement).setStyle("MozTransform", "rotate(" + anguloAtual + "deg)");
+					Y.one(tunerRotElement).setStyle("webkitTransform", "rotate(" + anguloAtual + "deg)");
+					Y.one(tunerRotElement).setStyle("transform", "rotate(" + anguloAtual + "deg)");
 
 					// calcula canal e ruido
 					var newChannel = Math.round( (pointerPosInicial * (numChannels - 1)) / displayWidth) ;
