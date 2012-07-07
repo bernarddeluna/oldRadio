@@ -1,23 +1,23 @@
 window.HTML5PRO = window.HTML5PRO || {};
 HTML5PRO.APPS = HTML5PRO.APPS || {};
 
-(function($){
-	
+YUI().use('node', 'event', function (Y) {
+
 	HTML5PRO.APPS.Radio = function(){
 		
 		var audio,
 			audioChiado,
-			audioList = $('audio'),
-			audioContainner = $('#audio_containner')[0],
+			audioList = Y.one('audio'),
+			audioContainner = Y.one('#audio_containner'),
 			audioSource,
-			volumeAudio=1,
+			volumeAudio = 1,
 			anguloAtual = 0,
 			anguloInicial = null,
 			
-			tuner = $(".tuner .controllerCont"),
-			tunerRotElement = $(".tuner .controller"),
-			tunerCenterX = tuner.offset().left + (tuner.width() / 2),
-			tunerCenterY = tuner.offset().top + (tuner.height() / 2),
+			tuner = Y.one(".tuner .controllerCont"),
+			tunerRotElement = Y.one(".tuner .controller"),
+			tunerCenterX = tuner.getXY()[0] + (tuner._node.offsetWidth / 2),
+			tunerCenterY = tuner.getXY()[1] + (tuner._node.offsetHeight / 2),
 			tunerDown = false,
 
 			numChannels = 10,
@@ -25,45 +25,45 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 			channel = 0,
 			audios = new Array(),
 
-			pointer = $(".pointer"),
+			pointer = Y.one(".pointer"),
 			pointerPosInicial = 0,
 			pointerPosFinal = 227,
 
-			volume = $(".volume .controllerCont"),
-			volumeRotElement = $(".volume .controller"),
-			volumeCenterX = volume.offset().left + (volume.width() / 2),
-			volumeCenterY = volume.offset().top + (volume.height() / 2),
+			volume = Y.one(".volume .controllerCont"),
+			volumeRotElement = Y.one(".volume .controller"),
+			volumeCenterX = volume.getXY()[0] + (volume._node.offsetWidth / 2),
+			volumeCenterY = volume.getXY()[1] + (volume._node.offsetHeight / 2),
 			volumeDown = false,
 
 			volumeAnguloAtual = 0,
 			volumeAnguloInicial = null,
 
-			blockMove = 0,
+			// blockMove = 0,
 			wavePos = (Math.cos( ((0*(numChannels-1)*2)/displayWidth)*Math.PI )*0.5+0.5),
 			playing = false;
 		
 		bind = function() {
 
-			$(".on-off").click(function(e) {
+			Y.one(".on-off").on('click', function(e) {
 				
 				e.preventDefault();
 				
 				if (playing) { 
 					playing = false;
 					audios[channel].pause();
-					$(".case").removeClass('on');
+					Y.one(".case").removeClass('on');
 				} else { 
 					playing = true;
 					audios[channel].play();
-					$(".case").addClass('on');
+					Y.one(".case").addClass('on');
 				}
 
-				audios[channel].currentTime=0;
+				audios[channel].currentTime = 0;
 				setVolume(volumeAudio);
 
 			});
 
-			$(".global-radio").mouseup(function(e) {
+			Y.one(".global-radio").on('mouseup', function(e) {
 				volumeDown = false;
 				volumeAnguloInicial = null;
 				anguloInicial = null;
@@ -72,7 +72,7 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 
 			// --- Volume --- //
 
-			volume.mousedown(function(e) {
+			volume.on('mousedown', function(e) {
 
 				volumeDown = true;
 				
@@ -83,7 +83,7 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 
 			});
 
-			volume.mousemove(function(e) {
+			volume.on('mousemove', function(e) {
 
 				if (volumeAnguloInicial !== null) {
 
@@ -127,20 +127,20 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 
 					setVolume(volumeAudio);
 
-                    $(volumeRotElement).css("-webkit-transform", "rotate(" + volumeAnguloAtual + "deg)");
-                    $(volumeRotElement).css("-moz-transform", "rotate(" + volumeAnguloAtual + "deg)");
+                    Y.one(volumeRotElement).setStyle("-webkit-transform", "rotate(" + volumeAnguloAtual + "deg)");
+                    Y.one(volumeRotElement).setStyle("-moz-transform", "rotate(" + volumeAnguloAtual + "deg)");
 				}
 
 			});
 
 			// --- Tuner --- //
 
-			tuner.mouseup(function(e) {
+			tuner.on('mouseup', function(e) {
 				tunerDown = false;
 				anguloInicial = null;
 			});
 
-			tuner.mousedown(function(e) {
+			tuner.on('mousedown', function(e) {
 
 				tunerDown = true;
 
@@ -151,7 +151,7 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 
 			});
 
-			tuner.mousemove(function(e) {
+			tuner.on('mousemove', function(e) {
 				
 				if (anguloInicial !== null) {
 
@@ -178,10 +178,10 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 						pointerPosInicial = pointerPosFinal;
 					}
 
-					pointer.css("left", pointerPosInicial);
+					pointer.setStyle("left", pointerPosInicial);
 
-					$(tunerRotElement).css("-webkit-transform", "rotate(" + anguloAtual + "deg)");
-					$(tunerRotElement).css("-moz-transform", "rotate(" + anguloAtual + "deg)");
+					Y.one(tunerRotElement).setStyle("-webkit-transform", "rotate(" + anguloAtual + "deg)");
+					Y.one(tunerRotElement).setStyle("-moz-transform", "rotate(" + anguloAtual + "deg)");
 
 					// calcula canal e ruido
 					var newChannel = Math.round( (pointerPosInicial * (numChannels - 1)) / displayWidth) ;
@@ -223,27 +223,41 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 				audioChiado.volume = 0;
 			}
 
+		},
+
+		konamiCode = function(){
+			
+			var kkeys = [], 
+				konami = "38,38,40,40,37,39,37,39,66,65";
+			
+			Y.one(document).on('keydown', function(e) {
+			  
+			  kkeys.push( e.keyCode );
+			  
+			  if ( kkeys.toString().indexOf( konami ) >= 0 ){
+			    
+			    // Y.one(document).on(unbind('keydown', arguments.callee);
+		    	Y.one("html").addClass("tron");
+
+			  }
+
+			});
 		}
 
 		return {
 			
-			init: function(){ 
+			init: function() {
 				
 				for (var i = 0; i < numChannels; i++) {
 					var newAudio = document.createElement('audio');
 					newAudio.innerHTML='<source src="http://media.zenorocha.com/oldradio/' + i + '.mp3" type="audio/mpeg"><source src="http://media.zenorocha.com/oldradio/' + i + '.ogg" type="audio/ogg">';
 					audioContainner.appendChild(newAudio);
 					audios.push(newAudio);
-					//loop
 					newAudio.addEventListener("ended", function(e){ e.target.play(); }, false);
 				}
-
-				$(document).bind('keypress', function (e) {
-				    
-				});
 				
 				audioChiado = document.getElementById("audio_chiado");
-				audioSource = $('#audio source')[0];
+				audioSource = Y.one('#audio source');
 				audioChiado.volume = 0;
 
 				//loop
@@ -251,15 +265,14 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 
 				audioChiado.play();
 				bind();
+				konamiCode();
 			}
 
 		};
 	};
+
+	var radio = new HTML5PRO.APPS.Radio();
+	radio.init();
 	
-	$(function(){
-		var radio = new HTML5PRO.APPS.Radio();
-		radio.init();
-	});
-	
-}(jQuery));
+});
 
