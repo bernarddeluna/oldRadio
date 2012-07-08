@@ -1,27 +1,9 @@
-* {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	outline: 0 !important;
-}
-
-/* ----------- */
-
-@font-face {
-	font-family: 'SFSpeakeasyRegular';
-	src: url('../font/SF_Speakeasy-webfont.eot');
-	src: url('../font/SF_Speakeasy-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('../font/SF_Speakeasy-webfont.woff') format('woff'),
-	     url('../font/SF_Speakeasy-webfont.ttf') format('truetype'),
-	     url('../font/SF_Speakeasy-webfont.svg#SFSpeakeasyRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 html {
 	text-align:center;
 	font-family: "Helvetica Neue", arial;
 	background: #e9e9e9;
-  	box-shadow: inset 0 -30px 120px 10px rgba(0,0,0, 0.2);
-  	height:100%;
+	box-shadow: inset 0 -30px 120px 10px rgba(0,0,0, 0.2);
+	height:100%;
 }
 .global-radio {
 	padding: 100px;
@@ -61,10 +43,10 @@ h1 span {
 	background: #372314;
 	border:3px solid #21150c;
 	border-radius: 4px;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), 0 4px 5px 1px rgba(0,0,0,.3);
-  background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), 0 4px 5px 1px rgba(0,0,0,.3);
+	background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
 	-webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(65%, rgba(233,233,233,0.1)), color-stop(40%, transparent), to(rgba(233,233,233,0.5)));
 	box-reflect: below 0 gradient(linear, left top, left bottom, from(transparent), color-stop(65%, rgba(233,233,233,0.1)), color-stop(40%, transparent), to(rgba(233,233,233,0.5)));
 }
@@ -81,6 +63,11 @@ h1 span {
 	box-shadow: 0 70px 30px 0 rgba(0,0,0,.1);
 	border-radius: 0 0 100% 100%;
 }
+.case div {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	outline: 0 !important;
+}
 .inner-case {
 	height: auto;
 	overflow: hidden;
@@ -88,9 +75,9 @@ h1 span {
 	background: rgba(0,0,0,0);
 	border: 3px solid rgba(0,0,0,.6);
 	border-radius: 2px;
-  background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
 	box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
 }
 .front-case {
@@ -99,10 +86,10 @@ h1 span {
 	background-color: #cd9552;
 	border: 2px solid rgba(0,0,0,.6);
 	border-radius: 2px;
-  background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  box-shadow: inset 0 1px 0 0px rgba(255,255,255,.3);
+	background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	box-shadow: inset 0 1px 0 0px rgba(255,255,255,.3);
 }
 .panel {
 	position:relative;
@@ -158,12 +145,12 @@ h1 span {
 	width: 40px;
 	border-radius: 50%;
 	background-color: #cd9552;
-  background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  box-shadow: inset 0 1px 0 0px rgba(255,255,255,.4), 0 3px 4px 1px rgba(0,0,0,.5);
+	background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+	box-shadow: inset 0 1px 0 0px rgba(255,255,255,.4), 0 3px 4px 1px rgba(0,0,0,.5);
 }
-.on .on-off > a {top:auto;bottom:-5px;}
+.on .on-off > a { top:auto;bottom:-5px; }
 .on-off > a > span {
 	display: block;
 	height: 30px;
@@ -191,9 +178,9 @@ h1 span {
 	box-shadow: inset 0 0 30px 0px rgba(0,0,0,0.5), inset 0 5px 10px -5px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.1);
 	border:3px solid rgba(0,0,0,0.3);
 	border-bottom-color: rgba(0,0,0,0.2);
-  background-image: -webkit-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
-  background-image: -moz-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
-  background-image: linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+	background-image: -webkit-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+	background-image: -moz-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+	background-image: linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
 }
 .live {
 	position:absolute;
@@ -249,14 +236,14 @@ h1 span {
 	opacity: .6;
 	height: 12px;
 	background-image:
-  -moz-linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
-  -moz-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	-moz-linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
+	-moz-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
 	background-image:
-  -webkit-linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
-  -webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	-webkit-linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
+	-webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
 	background-image:
-  linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
-  linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
+	linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
 	background-size:25px 50px, 5px 5px;
 	background-position:-24px bottom, -24px bottom;
 	background-repeat: repeat-x;
@@ -401,8 +388,6 @@ h1 span {
 	letter-spacing: 24px;
 	white-space: nowrap;
 }
-
-/* Gods */
 .gods {
 	display: inline-block;
 	position: absolute;
@@ -421,3 +406,13 @@ h1 span {
 .gods:hover {background: rgba(0,0,0,.7);}
 .gods a {color:#cd9552;}
 .gods a:hover, .gods a:focus {text-decoration: underline;}
+@font-face {
+	font-family: 'SFSpeakeasyRegular';
+	src: url('../font/SF_Speakeasy-webfont.eot');
+	src: url('../font/SF_Speakeasy-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../font/SF_Speakeasy-webfont.woff') format('woff'),
+	     url('../font/SF_Speakeasy-webfont.ttf') format('truetype'),
+	     url('../font/SF_Speakeasy-webfont.svg#SFSpeakeasyRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
