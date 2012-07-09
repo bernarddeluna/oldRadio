@@ -24,11 +24,11 @@ Konami code = up up down down right left right left b a
   border-top-color: #a9efff;
   border-radius: 14px;
   box-shadow: inset 0 0 6px 2px rgba(154, 245, 244, 0.6), 0 0 6px 2px rgba(154, 245, 244, 0.6);
-  -webkit-transition: all 0.3s ease-out;  
-  -moz-transition: all 0.3s ease-out;  
-  -ms-transition: all 0.3s ease-out;  
-  -o-transition: all 0.3s ease-out;  
-  transition: all 0.3s ease-out;  
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .tron .case.on {background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(43,43,43,1)), color-stop(40%,rgba(43,43,43,1)), color-stop(45%,rgba(118,229,255,1)), color-stop(55%,rgba(118,229,255,1)), color-stop(60%,rgba(43,43,43,1)), color-stop(100%,rgba(43,43,43,1)));}
 .tron .inner-case {
@@ -57,11 +57,11 @@ Konami code = up up down down right left right left b a
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(26%,rgba(0,0,0,0.5)), color-stop(59%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.9)));
   background-image: gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(26%,rgba(0,0,0,0.5)), color-stop(59%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.9)));
   box-shadow: inset 0 1px 0 0px rgba(154, 245, 244, 0.2);
-  -webkit-transition: all 0.3s ease-out;  
-  -moz-transition: all 0.3s ease-out;  
-  -ms-transition: all 0.3s ease-out;  
-  -o-transition: all 0.3s ease-out;  
-  transition: all 0.3s ease-out; 
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .tron .on .front-case {background-color: #76e5ff;}
 .tron .panel {
@@ -80,11 +80,11 @@ Konami code = up up down down right left right left b a
   font-size:11px;
   font-style: normal;
   text-shadow: 1px 1px 5px rgba(154, 245, 244, 0.4),  -1px -1px 5px rgba(154, 245, 244, 0.4), -1px 1px 5px rgba(154, 245, 244, 0.4),  1px -1px 5px rgba(154, 245, 244, 0.4);
-  -webkit-transition: all 0.3s ease-out;  
-  -moz-transition: all 0.3s ease-out;  
-  -ms-transition: all 0.3s ease-out;  
-  -o-transition: all 0.3s ease-out;  
-  transition: all 0.3s ease-out; 
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .tron .on .panel:before {opacity: 1;}
 .tron .on-off {
@@ -104,8 +104,8 @@ Konami code = up up down down right left right left b a
   box-shadow: inset 0 0 3px 2px rgba(255, 118, 61, 0.8), 0 0 7px 3px rgba(255, 118, 61, 0.4);
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out; 
-  -o-transition: all 0.3s ease-out; 
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 .tron .on-off > a > span {
