@@ -41,18 +41,18 @@ YUI().use('node', 'event', function (Y) {
 			// blockMove = 0,
 			wavePos = (Math.cos (((0 * (numChannels - 1) * 2) / displayWidth) * Math.PI) * 0.5 + 0.5),
 			playing = false;
-		
+
 		bind = function() {
 
 			Y.one(".on-off").on('click', function(e) {
-				
+
 				e.preventDefault();
-				
-				if (playing) { 
+
+				if (playing) {
 					playing = false;
 					audios[channel].pause();
 					Y.one(".case").removeClass('on');
-				} else { 
+				} else {
 					playing = true;
 					audios[channel].play();
 					Y.one(".case").addClass('on');
@@ -75,10 +75,10 @@ YUI().use('node', 'event', function (Y) {
 			volume.on('mousedown', function(e) {
 
 				volumeDown = true;
-				
+
 				var self = this,
 					anguloEmRadianos = Math.atan2(volumeCenterY - e.pageY, volumeCenterX - e.pageX);
-				
+
 				volumeAnguloInicial = (anguloEmRadianos * (180 / Math.PI)) - volumeAnguloAtual;
 
 			});
@@ -91,9 +91,9 @@ YUI().use('node', 'event', function (Y) {
 						anguloEmRadianos = Math.atan2(volumeCenterY - e.pageY, volumeCenterX - e.pageX),
 						anguloRelativo = anguloEmRadianos * (180 / Math.PI),
 						anguloTemp = volumeAnguloAtual;
-										
+
 					volumeAnguloAtual = (volumeAnguloInicial * 0) + (anguloRelativo - volumeAnguloInicial);
-					
+
 					var angTemp = (anguloTemp - volumeAnguloAtual);
 
 					//mantem o angulo entre 0 e 360
@@ -163,7 +163,7 @@ YUI().use('node', 'event', function (Y) {
 
 					anguloAtual = (anguloInicial * 0) + (anguloRelativo - anguloInicial);
 					var angTemp = (anguloTemp - anguloAtual);
-					
+
 					if (angTemp > 180) {
 						angTemp -= 360;
 					}
@@ -191,20 +191,20 @@ YUI().use('node', 'event', function (Y) {
 
 					// calcula canal e ruido
 					var newChannel = Math.round( (pointerPosInicial * (numChannels - 1)) / displayWidth) ;
-					
+
 					if (newChannel != channel) {
-						
+
 						audios[channel].pause();
 						audios[channel].currentTime = 0;
-						
+
 						channel = newChannel;
-						
+
 						if (playing) {
 							audios[channel].play();
 						}
 
 					}
-					
+
 					wavePos = (Math.cos( ((pointerPosInicial * (numChannels - 1) * 2) / displayWidth) * Math.PI ) * 0.5 + 0.5);
 					setVolume(volumeAudio);
 
@@ -215,9 +215,9 @@ YUI().use('node', 'event', function (Y) {
 		},
 
 		setVolume = function(vol){
-			
+
 			var volBase = (1 - wavePos) - 0.1;
-			
+
 			if (volBase < 0) {
 				volBase = 0;
 			}
@@ -232,14 +232,14 @@ YUI().use('node', 'event', function (Y) {
 		},
 
 		konamiCode = function(){
-			
-			var kkeys = [], 
+
+			var kkeys = [],
 				konami = "38,38,40,40,37,39,37,39,66,65";
-			
+
 			Y.one(document).on('keydown', function(e) {
-			  
+
 			  kkeys.push( e.keyCode );
-			  
+
 			  if ( kkeys.toString().indexOf( konami ) >= 0 ){
 			    Y.one(document).detach('keydown', arguments.callee);
 		    	Y.one("html").addClass("tron");
@@ -249,9 +249,9 @@ YUI().use('node', 'event', function (Y) {
 		}
 
 		return {
-			
+
 			init: function() {
-				
+
 				for (var i = 0; i < numChannels; i++) {
 					var newAudio = document.createElement('audio');
 					newAudio.innerHTML='<source src="http://media.zenorocha.com/oldradio/' + i + '.mp3" type="audio/mpeg"><source src="http://media.zenorocha.com/oldradio/' + i + '.ogg" type="audio/ogg">';
@@ -259,7 +259,7 @@ YUI().use('node', 'event', function (Y) {
 					audios.push(newAudio);
 					newAudio.addEventListener("ended", function(e){ e.target.play(); }, false);
 				}
-				
+
 				audioChiado = document.getElementById("audio_chiado");
 				audioSource = Y.one('#audio source');
 				audioChiado.volume = 0;
@@ -277,6 +277,6 @@ YUI().use('node', 'event', function (Y) {
 
 	var radio = new HTML5PRO.APPS.Radio();
 	radio.init();
-	
+
 });
 
