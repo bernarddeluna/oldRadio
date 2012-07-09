@@ -1,3 +1,8 @@
+* {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	outline: 0 !important;
+}
 html {
 	text-align:center;
 	font-family: "Helvetica Neue", arial;
@@ -62,11 +67,6 @@ h1 span {
 	background: transparent;
 	box-shadow: 0 70px 30px 0 rgba(0,0,0,.1);
 	border-radius: 0 0 100% 100%;
-}
-.case div {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	outline: 0 !important;
 }
 .inner-case {
 	height: auto;
