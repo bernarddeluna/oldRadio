@@ -3,8 +3,8 @@ HTML5PRO.APPS = HTML5PRO.APPS || {};
 
 YUI().use('node', 'event', function (Y) {
 
-	HTML5PRO.APPS.Radio = function(){
-		
+	HTML5PRO.APPS.Radio = function () {
+
 		var audio,
 			audioChiado,
 			audioList = Y.one('audio'),
@@ -13,7 +13,7 @@ YUI().use('node', 'event', function (Y) {
 			volumeAudio = 1,
 			anguloAtual = 0,
 			anguloInicial = null,
-			
+
 			tuner = Y.one(".tuner .controllerCont"),
 			tunerRotElement = Y.one(".tuner .controller"),
 			tunerCenterX = tuner.getXY()[0] + (tuner._node.offsetWidth / 2),
@@ -23,7 +23,7 @@ YUI().use('node', 'event', function (Y) {
 			numChannels = 10,
 			displayWidth = 230,
 			channel = 0,
-			audios = new Array(),
+			audios = [],
 
 			pointer = Y.one(".pointer"),
 			pointerPosInicial = 0,
@@ -39,7 +39,7 @@ YUI().use('node', 'event', function (Y) {
 			volumeAnguloInicial = null,
 
 			// blockMove = 0,
-			wavePos = (Math.cos( ((0*(numChannels-1)*2)/displayWidth)*Math.PI )*0.5+0.5),
+			wavePos = (Math.cos (((0 * (numChannels - 1) * 2) / displayWidth) * Math.PI) * 0.5 + 0.5),
 			playing = false;
 		
 		bind = function() {
@@ -115,15 +115,15 @@ YUI().use('node', 'event', function (Y) {
 					    volumeAnguloInicial = null;
 					}
 
-					if(blockMove == -1) {
+					if (blockMove == -1) {
 					    volumeAnguloAtual = 180;
 					}
 
-					if(blockMove == 1) {
+					if (blockMove == 1) {
 						volumeAnguloAtual = 360;
 					}
 
-					volumeAudio = ( volumeAnguloAtual - 180 ) / 180;
+					volumeAudio = (volumeAnguloAtual - 180) / 180;
 
 					setVolume(volumeAudio);
 
@@ -136,31 +136,31 @@ YUI().use('node', 'event', function (Y) {
 
 			// --- Tuner --- //
 
-			tuner.on('mouseup', function(e) {
+			tuner.on('mouseup', function (e) {
 				tunerDown = false;
 				anguloInicial = null;
 			});
 
-			tuner.on('mousedown', function(e) {
+			tuner.on('mousedown', function (e) {
 
 				tunerDown = true;
 
 				var self = this,
 					anguloEmRadianos = Math.atan2(tunerCenterY - e.pageY, tunerCenterX - e.pageX);
-					
+
 				anguloInicial = (anguloEmRadianos * (180 / Math.PI)) - anguloAtual;
 
 			});
 
-			tuner.on('mousemove', function(e) {
-				
+			tuner.on('mousemove', function (e) {
+
 				if (anguloInicial !== null) {
 
 					var self = this,
 						anguloEmRadianos = Math.atan2(tunerCenterY - e.pageY, tunerCenterX - e.pageX),
 						anguloRelativo = anguloEmRadianos * (180 / Math.PI),
-						anguloTemp = anguloAtual;					
-					
+						anguloTemp = anguloAtual;
+
 					anguloAtual = (anguloInicial * 0) + (anguloRelativo - anguloInicial);
 					var angTemp = (anguloTemp - anguloAtual);
 					
