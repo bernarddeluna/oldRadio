@@ -174,8 +174,12 @@ YUI().use('node', 'event', function (Y) {
 					pointerPosInicial += angTemp * -0.07;
 
 					if (pointerPosInicial < 0) {
+						anguloInicial=anguloRelativo;
+						anguloTemp=anguloAtual=0;
 						pointerPosInicial = 0;
 					} else if (pointerPosInicial > pointerPosFinal) {
+						anguloInicial=anguloRelativo;
+						anguloTemp=anguloAtual=0;
 						pointerPosInicial = pointerPosFinal;
 					}
 
