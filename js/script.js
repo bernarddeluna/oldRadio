@@ -64,7 +64,7 @@ YUI().use(['node', 'konami'], function (Y) {
       });
 
       // Konami event
-      Y.one(document).on('konami', function () {
+      Y.one(document).once('konami', function () {
         Y.one("html").addClass("tron");
       });
 
