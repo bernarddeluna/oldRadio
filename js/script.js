@@ -1,7 +1,7 @@
 window.HTML5PRO = window.HTML5PRO || {};
 HTML5PRO.APPS = HTML5PRO.APPS || {};
 
-YUI().use('node', 'event', function (Y) {
+YUI().use('node', function (Y) {
 
   HTML5PRO.APPS.Radio = function () {
 
@@ -254,7 +254,8 @@ YUI().use('node', 'event', function (Y) {
 
         for (var i = 0; i < numChannels; i++) {
           var newAudio = document.createElement('audio');
-          newAudio.innerHTML='<source src="http://media.zenorocha.com/oldradio/' + i + '.mp3" type="audio/mpeg"><source src="http://media.zenorocha.com/oldradio/' + i + '.ogg" type="audio/ogg">';
+          newAudio.setAttribute('preload', 'auto');
+          newAudio.innerHTML = '<source src="http://media.zenorocha.com/oldradio/' + i + '.mp3" type="audio/mpeg"><source src="http://media.zenorocha.com/oldradio/' + i + '.ogg" type="audio/ogg">';
           audioContainner.appendChild(newAudio);
           audios.push(newAudio);
           newAudio.addEventListener("ended", function(e){ e.target.play(); }, false);
