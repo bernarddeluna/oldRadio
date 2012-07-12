@@ -1,7 +1,7 @@
 window.HTML5PRO = window.HTML5PRO || {};
 HTML5PRO.APPS = HTML5PRO.APPS || {};
 
-YUI().use('node', function (Y) {
+YUI().use(['node', 'konami'], function (Y) {
 
   HTML5PRO.APPS.Radio = function () {
 
@@ -61,6 +61,11 @@ YUI().use('node', function (Y) {
         audios[channel].currentTime = 0;
         setVolume(volumeAudio);
 
+      });
+
+      // Konami event
+      Y.one(document).on('konami', function () {
+        Y.one("html").addClass("tron");
       });
 
       Y.one(".global-radio").on('mouseup', function(e) {
@@ -229,23 +234,6 @@ YUI().use('node', function (Y) {
         audioChiado.volume = 0;
       }
 
-    },
-
-    konamiCode = function(){
-
-      var kkeys = [],
-          konami = "38,38,40,40,37,39,37,39,66,65";
-
-      Y.one(document).on('keydown', function(e) {
-
-        kkeys.push( e.keyCode );
-
-        if ( kkeys.toString().indexOf( konami ) >= 0 ){
-          Y.one(document).detach('keydown', arguments.callee);
-          Y.one("html").addClass("tron");
-        }
-
-      });
     }
 
     return {
@@ -270,7 +258,6 @@ YUI().use('node', function (Y) {
 
         audioChiado.play();
         bind();
-        konamiCode();
       }
 
     };
