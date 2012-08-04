@@ -243,7 +243,7 @@ YUI().use(['node', 'konami'], function (Y) {
         for (var i = 0; i < numChannels; i++) {
           var newAudio = document.createElement('audio');
           newAudio.setAttribute('preload', 'auto');
-          newAudio.innerHTML = '<source src="http://media.zenorocha.com/oldradio/' + i + '.mp3" type="audio/mpeg"><source src="http://media.zenorocha.com/oldradio/' + i + '.ogg" type="audio/ogg">';
+          newAudio.innerHTML = '<source src="https://github.com/html5-pro/oldRadio/raw/master/audio/' + i + '.mp3" type="audio/mpeg"><source src="https://github.com/html5-pro/oldRadio/raw/master/audio/' + i + '.ogg" type="audio/ogg">';
           audioContainner.appendChild(newAudio);
           audios.push(newAudio);
           newAudio.addEventListener("ended", function(e){ e.target.play(); }, false);
