@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 lib-cov
 *.seed
 *.log
@@ -15,3 +16,5 @@ node_modules
 npm-debug.log
 
 .DS_Store
+app/node_modules
+media-server/core/*
