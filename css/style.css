@@ -51,9 +51,9 @@ h1 span {
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), 0 4px 5px 1px rgba(0,0,0,.3);
   background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
   background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+  background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.4));
   -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(65%, rgba(233,233,233,0.1)), color-stop(40%, transparent), to(rgba(233,233,233,0.5)));
-  box-reflect: below 0 gradient(linear, left top, left bottom, from(transparent), color-stop(65%, rgba(233,233,233,0.1)), color-stop(40%, transparent), to(rgba(233,233,233,0.5)));
+  box-reflect: below 0 gradient(linear, to right to bottom, to right to top, from(transparent), color-stop(65%, rgba(233,233,233,0.1)), color-stop(40%, transparent), to(rgba(233,233,233,0.5)));
 }
 .case:before {
   position:absolute;
@@ -77,7 +77,7 @@ h1 span {
   border-radius: 2px;
   background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
   background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+  background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.4));
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
 }
 .front-case {
@@ -88,7 +88,7 @@ h1 span {
   border-radius: 2px;
   background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
   background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+  background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.4));
   box-shadow: inset 0 1px 0 0px rgba(255,255,255,.3);
 }
 .panel {
@@ -98,9 +98,10 @@ h1 span {
   background: #5f3c24;
   border: 2px solid rgba(0,0,0,.6);
   border-radius: 2px;
-  background-image: -moz-repeating-linear-gradient(-90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
-  background-image: -webkit-repeating-linear-gradient(-90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
-  background-image: repeating-linear-gradient(-90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: auto 2px;
   box-shadow: inset 0 0 30px 0px rgba(0,0,0,0.5), inset 0 5px 10px -5px rgba(0,0,0,0.7), 0 1px 0 0px rgba(255,255,255,.1);
 }
 .panel:before {
@@ -147,7 +148,7 @@ h1 span {
   background-color: #cd9552;
   background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
   background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+  background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.4));
   box-shadow: inset 0 1px 0 0px rgba(255,255,255,.4), 0 3px 4px 1px rgba(0,0,0,.5);
 }
 .on .on-off > a { top:auto;bottom:-5px; }
@@ -161,9 +162,10 @@ h1 span {
   overflow: hidden;
   border-radius: 50%;
   background-color: #5f3c24;
-  background-image: -moz-repeating-linear-gradient(-90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
-  background-image: -webkit-repeating-linear-gradient(-90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
-  background-image: repeating-linear-gradient(-90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: auto 2px;
   box-shadow: inset 0 1px 0 0px rgba(255,255,255,.2), inset 0 -1px 0 0 rgba(0,0,0,.2), 0 1px 0 0 rgba(255,255,255,.2);
 }
 .retina {
@@ -178,9 +180,9 @@ h1 span {
   box-shadow: inset 0 0 30px 0px rgba(0,0,0,0.5), inset 0 5px 10px -5px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.1);
   border:3px solid rgba(0,0,0,0.3);
   border-bottom-color: rgba(0,0,0,0.2);
-  background-image: -webkit-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
-  background-image: -moz-linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
-  background-image: linear-gradient(-88deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+  background-image: -webkit-linear-gradient(271deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+  background-image: -moz-linear-gradient(271deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
+  background-image: linear-gradient(179deg, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.08) 49%,rgba(255,255,255,0.03) 50%,rgba(0,0,0,0) 51%,rgba(0,0,0,0.4) 100%);
 }
 .live {
   position:absolute;
@@ -236,16 +238,16 @@ h1 span {
   opacity: .6;
   height: 12px;
   background-image:
-  -moz-linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
-  -moz-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+  -moz-linear-gradient(left, rgba(255,255,255,1) 1px, transparent 1px),
+  -moz-linear-gradient(left, rgba(255,255,255,.3) 1px, transparent 1px);
   background-image:
-  -webkit-linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
-  -webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+  -webkit-linear-gradient(left, rgba(255,255,255,1) 1px, transparent 1px),
+  -webkit-linear-gradient(left, rgba(255,255,255,.3) 1px, transparent 1px);
   background-image:
-  linear-gradient(0, rgba(255,255,255,1) 1px, transparent 1px),
-  linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
-  background-size:25px 50px, 5px 5px;
-  background-position:-24px bottom, -24px bottom;
+  linear-gradient(to right, rgba(255,255,255,1) 1px, transparent 1px),
+  linear-gradient(to right, rgba(255,255,255,.3) 1px, transparent 1px);
+  background-size:24px 50px, 5px 5px;
+  background-position:0 bottom;
   background-repeat: repeat-x;
 }
 .pointer {
@@ -291,7 +293,7 @@ h1 span {
   box-shadow: inset 0 0 1px 3px rgba(0,0,0,.2), inset 0 1px 0 0px rgba(255,255,255,.4), 0 3px 4px 1px rgba(0,0,0,.5);
   background-image: -moz-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
   background-image: -webkit-linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
-  background-image: linear-gradient(top, transparent 40%, rgba(0,0,0,.4));
+  background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.4));
 }
 .controllerCont:active {
   cursor: -webkit-grabbing;
@@ -330,8 +332,6 @@ h1 span {
 .tuner > div {
   position: absolute;
   z-index: 0;
-  -webkit-box-shadow:  0 100px 10px 16px rgba(0,0,0,.25);
-  -moz-box-shadow:  0 100px 10px 16px rgba(0,0,0,.25);
   box-shadow:  100px 0 10px 16px rgba(0,0,0,.25);
   width: 50%;
   height: 25px;
@@ -366,8 +366,6 @@ h1 span {
 .volume > div {
   position: absolute;
   z-index: 0;
-  -webkit-box-shadow:  0 100px 10px 16px rgba(0,0,0,.25);
-  -moz-box-shadow:  0 100px 10px 16px rgba(0,0,0,.25);
   box-shadow:  100px 0 10px 16px rgba(0,0,0,.25);
   width: 25%;
   height: 10px;
